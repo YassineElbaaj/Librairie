@@ -16,6 +16,12 @@ public class Author {
 	@Column(name= "prenom")
 	private String prenom;
 	
+	@OneToMany(
+        cascade = CascadeType.ALL,
+        orphanRemoval = true
+    )
+    	private List<Book> books = new ArrayList<>();
+	
 	public Author() {
 		
 	}
